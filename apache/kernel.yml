@@ -1,0 +1,6 @@
+---
+- name: Check Kernel Version
+  hosts: web
+
+  roles:
+    - role_kernel

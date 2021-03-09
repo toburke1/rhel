@@ -1,4 +1,7 @@
 ---
+- name: setting version variable
+  vars:
+    version: {}
 - set_fact:
     versions: "{{ versions | combine( { item: hostvars[item]['ansible_distribution_version'] + '_' + hostvars[item]['ansible_kernel']  } ) }}"
   with_inventory_hostnames:

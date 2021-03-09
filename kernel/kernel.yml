@@ -1,6 +1,7 @@
 ---
 - name: Check Kernel Version
   hosts: web
+  gather_facts: true
   
   vars:
     - versions: {}

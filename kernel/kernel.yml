@@ -3,7 +3,6 @@
   hosts: web
   
   vars:
-    - vars
-
+    versions
   roles:
     - role_kernel

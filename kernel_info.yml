@@ -22,4 +22,7 @@
   - debug: msg='{{ versions }}'
 
   - name: Dump all vars
-    action: template src=templates/dumpall.j2 dest=./kernel.all
+    template:
+      src: dumpall.j2
+      dest: ./kernel.all
+    

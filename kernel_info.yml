@@ -1,14 +1,11 @@
 ---
 
-- hosts: all
+- hosts: web
   become: yes
   become_method: sudo
   gather_facts: yes
 #    - debug: msg='{{ versions }}'
 
-
-- hosts: localhost
-  connection: local
   vars:
     versions: {}
 

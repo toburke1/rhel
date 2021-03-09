@@ -1,6 +1,9 @@
 ---
 - name: Check Kernel Version
   hosts: web
+  
+  vars:
+    - vars
 
   roles:
     - role_kernel

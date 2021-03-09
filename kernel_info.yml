@@ -1,12 +1,11 @@
 ---
 
-- hosts: all
+- hosts: web
   become: yes
   become_method: sudo
   gather_facts: yes
 
   vars:
-    hostvars: 
     versions: {}
 
   tasks:

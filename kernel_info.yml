@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+#    - debug: msg='{{ versions }}'
+
+
+- hosts: localhost
+  connection: local
+  vars:
+    versions: {}
+
+  tasks:
+
+  - set_fact:
+      versions: "{{ versions | combine( { item: hostvars[item]['ansible_distribution_version'] + '_' + hostvars[item]['ansible_kernel']  } ) }}"
+    with_inventory_hostnames:
+      - all
+
+  - debug: msg='{{ versions }}'
+
+  - name: Dump all vars
+    action: template src=templates/dumpall.j2 dest=./kernel.all
